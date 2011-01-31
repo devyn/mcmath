@@ -1,0 +1,439 @@
+TCairns_Calculator
+v7
+r0
+t317326555.943767
+cCheck dependencies
+cProcessInfoPlistFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Info.plist Cairns_Calculator-Info.plist
+cCopyStringsFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+cCompileXIB /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib
+cProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator normal x86_64
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal ppc objective-c com.apple.compilers.gcc.4_2
+cLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator normal i386
+cLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator normal ppc
+cCreateUniversalBinary /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator normal "x86_64 i386 ppc"
+cGenerateDSYMFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app.dSYM /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator
+cTouch /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app
+
+N/Developer/SDKs/MacOSX10.6.sdk
+c000000004C4E1C2F00000000000000EE
+t1280187439
+s238
+
+N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/Cocoa.framework/Headers/Cocoa.h
+c0000000040C4AA6800000000000001E5
+t1086630504
+s485
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.h
+c000000004D372C680000000000000147
+t1295461480
+s327
+i<Cocoa/Cocoa.h>
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m
+c000000004D39CD510000000000000182
+t1295633745
+s386
+i"Brain.h"
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.h
+c000000004D3729870000000000000151
+t1295460743
+s337
+i<Cocoa/Cocoa.h>
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m
+c000000004D3729870000000000000190
+t1295460743
+s400
+i"Cairns_CalculatorAppDelegate.h"
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch
+c000000004D37298700000000000000A5
+t1295460743
+s165
+i<Cocoa/Cocoa.h>
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/InfoPlist.strings
+c000000004D372987000000000000002D
+t1295460743
+s45
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib
+c000000004D3735ED000000000002FD2B
+t1295463917
+s195883
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Brain.o
+t1295633754
+s6288
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator
+t1295633754
+s18744
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator.LinkFileList
+c000000004D3730870000000000000211
+t1295462535
+s529
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_CalculatorAppDelegate.o
+t1295462543
+s15468
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/main.o
+t1295462543
+s4924
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Brain.o
+t1295633755
+s6396
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator
+t1295633755
+s14296
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator.LinkFileList
+c000000004D373087000000000000020E
+t1295462535
+s526
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_CalculatorAppDelegate.o
+t1295462544
+s15360
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/main.o
+t1295462544
+s4952
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Brain.o
+t1295633749
+s7872
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator
+t1295633750
+s15672
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator.LinkFileList
+c000000004D3730870000000000000217
+t1295462535
+s535
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_CalculatorAppDelegate.o
+t1295462543
+s21352
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/main.o
+t1295462543
+s5128
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app
+t1295633755
+s264
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app.dSYM
+t1295633755
+s264
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Info.plist
+t1295462535
+s916
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator
+t1295633755
+s55256
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/PkgInfo
+t1295462535
+s8
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/InfoPlist.strings
+t1295462535
+s92
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/MainMenu.nib
+t1295463924
+s38136
+
+N/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m
+c000000004D37298800000000000000FF
+t1295460744
+s255
+i<Cocoa/Cocoa.h>
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004A1F2D63000000000000A5E0
+t1243557219
+s42464
+
+N/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch.gch
+t1295462543
+s52794960
+
+N/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch.gch
+t1295462540
+s55559984
+
+N/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch.gch
+t1295462540
+s52922128
+
+NCairns_Calculator-Info.plist
+c000000004D37298700000000000003EA
+t1295460743
+s1002
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies317326548#317326548#0(0"0(0#1#0"9007688888287348#0"0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317326549.265039
+e317326554.520073
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Brain.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m317326549#317326554#0(0"0(0#0#86"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m4300911832#2123"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/i386 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Brain.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317155343.747320
+e317155343.955419
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_CalculatorAppDelegate.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m317155343#317155343#0(0"0(0#0#109"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m4300911832#2169"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/i386 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_CalculatorAppDelegate.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s317155343.547874
+e317155343.747203
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/main.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m317155343#317155343#0(0"0(0#0#85"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m4300911832#2121"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/i386 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/main.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s317326550.951039
+e317326555.402690
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Brain.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m317326550#317326555#0(0"0(0#0#86"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m4300911832#2130"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/ppc -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Brain.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s317155344.171967
+e317155344.373489
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_CalculatorAppDelegate.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m317155344#317155344#0(0"0(0#0#109"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m4300911832#2176"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/ppc -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_CalculatorAppDelegate.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal ppc objective-c com.apple.compilers.gcc.4_2
+s317155343.955548
+e317155344.171857
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/main.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m317155343#317155344#0(0"0(0#0#85"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m4300911832#2128"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/ppc -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/main.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Brain.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s317326548.816626
+e317326549.426325
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Brain.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@94"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m317326548#317326549#0(0"0(0#0#86"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m3838526430290211840#2129"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/x86_64 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Brain.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Brain.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_CalculatorAppDelegate.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s317155343.339278
+e317155343.547758
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_CalculatorAppDelegate.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@117"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m317155343#317155343#0(0"0(0#0#109"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m4300911832#2175"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/x86_64 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_CalculatorAppDelegate.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_CalculatorAppDelegate.o0#
+
+CCompileC build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/main.o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s317155343.333526
+e317155343.513840
+r1
+xCompileC
+xbuild/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/main.o
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@93"Compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m317155343#317155343#0(0"0(0#0#85"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m4300911832#2127"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/x86_64 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -include /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/main.m -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/main.o0#
+
+CCompileXIB /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib
+s317156724.217397
+e317156724.651387
+r1
+xCompileXIB
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib
+lSLF07#2@37"CompileXIB English.lproj/MainMenu.xib317156724#317156724#0(0"0(0#0#105"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib4300911832#459"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/MainMenu.nib /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/MainMenu.xib0#
+
+CCopyStringsFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/InfoPlist.strings English.lproj/InfoPlist.strings
+s317155335.845859
+e317155335.900511
+r1
+xCopyStringsFile
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj/InfoPlist.strings
+xEnglish.lproj/InfoPlist.strings
+lSLF07#2@36"Copy English.lproj/InfoPlist.strings317155335#317155335#0(0"0(0#0#110"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/English.lproj/InfoPlist.strings4300911832#457"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv ICONV /usr/bin/iconv    /Developer/Library/Xcode/Plug-ins/CoreBuildTasks.xcplugin/Contents/Resources/copystrings --validate --inputencoding utf-8 --outputencoding UTF-16 English.lproj/InfoPlist.strings --outdir /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Resources/English.lproj0#
+
+CCreateUniversalBinary /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator normal "x86_64 i386 ppc"
+s317326555.693420
+e317326555.751476
+r1
+xCreateUniversalBinary
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator
+xnormal
+xx86_64 i386 ppc
+lSLF07#2@115"CreateUniversalBinary build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator normal "x86_64 i386 ppc"317326555#317326555#0(0"0(0#0#94"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/x86_64 i386 ppc4300911832#806"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    /usr/bin/lipo -create /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator -output /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator0#
+
+CGenerateDSYMFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app.dSYM /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator
+s317326555.751597
+e317326555.920110
+r1
+xGenerateDSYMFile
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app.dSYM
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator
+lSLF07#2@126"GenerateDSYMFile build/Release/Cairns_Calculator.app.dSYM build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator317326555#317326555#0(0"0(0#0#147"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator4300911832#389"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    /Developer/usr/bin/dsymutil /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/MacOS/Cairns_Calculator -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app.dSYM0#
+
+CLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator normal i386
+s317326554.520245
+e317326554.826599
+r1
+xLd
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator
+xnormal
+xi386
+lSLF07#2@183"Link /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator317326554#317326554#0(0"0(0#0#0"4300911832#827"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -filelist /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/i386/Cairns_Calculator0#
+
+CLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator normal ppc
+s317326555.402792
+e317326555.693312
+r1
+xLd
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator
+xnormal
+xppc
+lSLF07#2@182"Link /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator317326555#317326555#0(0"0(0#0#0"4300911832#824"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch ppc -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -filelist /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/ppc/Cairns_Calculator0#
+
+CLd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator normal x86_64
+s317326549.426445
+e317326550.950623
+r1
+xLd
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator
+xnormal
+xx86_64
+lSLF07#2@185"Link /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator317326549#317326550#0(0"0(0#0#0"4300911832#833"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/gcc-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -filelist /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator.LinkFileList -mmacosx-version-min=10.6 -framework Cocoa -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Objects-normal/x86_64/Cairns_Calculator0#
+
+CProcessInfoPlistFile /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Info.plist Cairns_Calculator-Info.plist
+s317155335.810306
+e317155335.845757
+r1
+xProcessInfoPlistFile
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Info.plist
+xCairns_Calculator-Info.plist
+lSLF07#2@36"Process Cairns_Calculator-Info.plist317155335#317155335#0(0"0(0#0#107"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator-Info.plist4300911832#464"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    builtin-infoPlistUtility Cairns_Calculator-Info.plist -genpkginfo /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app/Contents/Info.plist0#
+
+CProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal ppc objective-c com.apple.compilers.gcc.4_2
+s317155340.056280
+e317155343.333354
+r1
+xProcessPCH
+x/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch.gch
+xCairns_Calculator_Prefix.pch
+xnormal
+xppc
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@39"Precompile Cairns_Calculator_Prefix.pch317155340#317155343#0(0"0(0#0#107"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch4300911832#1985"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch ppc -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mtune=G5 -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/ppc -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch -o /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-chkyoruogaayinbuwkpikrndefvs/Cairns_Calculator_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s317155336.293297
+e317155340.056068
+r1
+xProcessPCH
+x/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch.gch
+xCairns_Calculator_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@39"Precompile Cairns_Calculator_Prefix.pch317155336#317155340#0(0"0(0#0#107"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch4300911832#1977"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/i386 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch -o /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-fzqavuftfpmpgdanxqhhkqzygdux/Cairns_Calculator_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch.gch Cairns_Calculator_Prefix.pch normal x86_64 objective-c com.apple.compilers.gcc.4_2
+s317155336.292098
+e317155340.131029
+r1
+xProcessPCH
+x/var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch.gch
+xCairns_Calculator_Prefix.pch
+xnormal
+xx86_64
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@39"Precompile Cairns_Calculator_Prefix.pch317155336#317155340#0(0"0(0#0#107"/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch4300911832#1981"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x objective-c-header -arch x86_64 -fmessage-length=0 -pipe -std=gnu99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-generated-files.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-own-target-headers.hmap -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-all-target-headers.hmap -iquote /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/Cairns_Calculator-project-headers.hmap -F/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/include -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources/x86_64 -I/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Cairns_Calculator.build/Release/Cairns_Calculator.build/DerivedSources -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/Cairns_Calculator_Prefix.pch -o /var/folders/hD/hDLHWY6JGHOpobzVw5Qkik++0Lw/-Caches-/com.apple.Xcode.2431/SharedPrecompiledHeaders/Cairns_Calculator_Prefix-hkvjxymxewxthphdagfqlyywtyfu/Cairns_Calculator_Prefix.pch.gch0#
+
+CTouch /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app
+s317326555.920217
+e317326555.943710
+r1
+xTouch
+x/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app
+lSLF07#2@120"Touch /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app317326555#317326555#0(0"0(0#0#0"4300911832#223"    cd /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator    /usr/bin/touch -c /Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/Cocoa/Cairns_Calculator/build/Release/Cairns_Calculator.app0#
+
