@@ -1,0 +1,69 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = B9C34DE712F7539300C01F8D /* radioButtonProject */;
+		activeTarget = 8D1107260486CEB800E47090 /* radioButtonProject */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* radioButtonProject */,
+		);
+		codeSenseManager = B9C34DF612F753B100C01F8D /* Code sense */;
+		executables = (
+			B9C34DE712F7539300C01F8D /* radioButtonProject */,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 318198675;
+			PBXWorkspaceStateSaveDate = 318198675;
+		};
+		sourceControlManager = B9C34DF512F753B100C01F8D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* radioButtonProject */ = {
+		activeExec = 0;
+		executables = (
+			B9C34DE712F7539300C01F8D /* radioButtonProject */,
+		);
+	};
+	B9C34DE712F7539300C01F8D /* radioButtonProject */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = radioButtonProject;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	B9C34DF512F753B100C01F8D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	B9C34DF612F753B100C01F8D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
