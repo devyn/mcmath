@@ -12,6 +12,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		B9AFB73212F9F79000EA5E67 /* Quadratic.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AFB73112F9F79000EA5E67 /* Quadratic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* quadForm-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "quadForm-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* quadForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quadForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9AFB73012F9F79000EA5E67 /* Quadratic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quadratic.h; sourceTree = "<group>"; };
+		B9AFB73112F9F79000EA5E67 /* Quadratic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quadratic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B9AFB73012F9F79000EA5E67 /* Quadratic.h */,
+				B9AFB73112F9F79000EA5E67 /* Quadratic.m */,
 				256AC3D80F4B6AC300CF3369 /* quadFormAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* quadFormAppDelegate.m */,
 			);
@@ -173,6 +178,7 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* quadFormAppDelegate.m in Sources */,
+				B9AFB73212F9F79000EA5E67 /* Quadratic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
