@@ -23,8 +23,7 @@
 	
 	/* quadratic formula calculation */
 	
-	double s; // common value
-	s = sqrt(pow(b, 2) - 4*a*c);
+	double s = sqrt(pow(b, 2) - 4*a*c); // common value between X1, X2
 	
 	answerX1 = (-b + s) / (2*a);
 	answerX2 = (-b - s) / (2*a);
