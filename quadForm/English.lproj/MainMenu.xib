@@ -2203,7 +2203,7 @@
 						<reference key="source" ref="740465625"/>
 						<reference key="destination" ref="572148914"/>
 					</object>
-					<int key="connectionID">557</int>
+					<int key="connectionID">563</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2211,7 +2211,7 @@
 						<reference key="source" ref="740465625"/>
 						<reference key="destination" ref="196715298"/>
 					</object>
-					<int key="connectionID">558</int>
+					<int key="connectionID">564</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -2219,7 +2219,47 @@
 						<reference key="source" ref="740465625"/>
 						<reference key="destination" ref="301215152"/>
 					</object>
-					<int key="connectionID">559</int>
+					<int key="connectionID">565</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fieldA</string>
+						<reference key="source" ref="740465625"/>
+						<reference key="destination" ref="572148914"/>
+					</object>
+					<int key="connectionID">566</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fieldB</string>
+						<reference key="source" ref="740465625"/>
+						<reference key="destination" ref="196715298"/>
+					</object>
+					<int key="connectionID">567</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fieldC</string>
+						<reference key="source" ref="740465625"/>
+						<reference key="destination" ref="301215152"/>
+					</object>
+					<int key="connectionID">568</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fieldX1</string>
+						<reference key="source" ref="740465625"/>
+						<reference key="destination" ref="895672875"/>
+					</object>
+					<int key="connectionID">569</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">fieldX2</string>
+						<reference key="source" ref="740465625"/>
+						<reference key="destination" ref="160109526"/>
+					</object>
+					<int key="connectionID">570</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3628,7 +3668,6 @@
 					<string>546.IBPluginDependency</string>
 					<string>549.IBPluginDependency</string>
 					<string>550.IBPluginDependency</string>
-					<string>551.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>56.ImportedFromIB2</string>
 					<string>57.IBEditorWindowLastContentRect</string>
@@ -3899,7 +3938,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>{{286, 129}, {275, 183}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3951,7 +3989,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">559</int>
+			<int key="maxID">570</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

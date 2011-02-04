@@ -7,6 +7,7 @@
 //
 
 #import "Quadratic.h"
+#import <math.h>
 
 @implementation Quadratic
 
@@ -14,13 +15,29 @@
 {
 	double a, b, c, answerX1, answerX2;
 	
+	/* get input */
+	
 	a = [fieldA doubleValue];
 	b = [fieldB doubleValue];
 	c = [fieldC doubleValue];
 	
-	/* placeholder code */
-	answerX1 = a+b+c;
-	answerX2 = answerX1;
+	/* quadratic formula calculation */
+	
+	double s; // common value
+	s = sqrt(pow(b, 2) - 4*a*c);
+	
+	answerX1 = (-b + s) / (2*a);
+	answerX2 = (-b - s) / (2*a);
+	
+	/* debug information */
+	
+	NSLog(@"-- quadratic calc req --");
+	NSLog(@"a = %f, b = %f, c = %f", a, b, c);
+	NSLog(@"s = %f", s);
+	NSLog(@"answerX1 = %f", answerX1);
+	NSLog(@"answerX2 = %f", answerX2);
+	
+	/* push answers back */
 	
 	[fieldX1 setDoubleValue:answerX1];
 	[fieldX2 setDoubleValue:answerX2];
