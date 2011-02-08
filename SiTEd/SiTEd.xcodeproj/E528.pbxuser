@@ -1,0 +1,158 @@
+// !$*UTF8*$!
+{
+	2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = B9ACBBBF1301D034006D08CC /* SiTEd */;
+		activeTarget = 8D15AC270486D014006FF6A4 /* SiTEd */;
+		codeSenseManager = B9ACBBD11301D038006D08CC /* Code sense */;
+		executables = (
+			B9ACBBBF1301D034006D08CC /* SiTEd */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 318885940;
+			PBXWorkspaceStateSaveDate = 318885940;
+		};
+		perUserProjectItems = {
+			B9ACBBE41301D5E7006D08CC /* PBXTextBookmark */ = B9ACBBE41301D5E7006D08CC /* PBXTextBookmark */;
+			B9ACBBF01301D8BA006D08CC /* PBXTextBookmark */ = B9ACBBF01301D8BA006D08CC /* PBXTextBookmark */;
+			B9ACBBF11301D8BA006D08CC /* PlistBookmark */ = B9ACBBF11301D8BA006D08CC /* PlistBookmark */;
+			B9ACBBF21301D8BA006D08CC /* PlistBookmark */ = B9ACBBF21301D8BA006D08CC /* PlistBookmark */;
+		};
+		sourceControlManager = B9ACBBD01301D038006D08CC /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1356, 949}}";
+			sepNavSelRange = "{923, 0}";
+			sepNavVisRange = "{44, 324}";
+		};
+	};
+	2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {439, 273}}";
+			sepNavSelRange = "{265, 0}";
+			sepNavVisRange = "{75, 240}";
+			sepNavWindowFrame = "{{15, 465}, {750, 558}}";
+		};
+	};
+	8D15AC270486D014006FF6A4 /* SiTEd */ = {
+		activeExec = 0;
+		executables = (
+			B9ACBBBF1301D034006D08CC /* SiTEd */,
+		);
+	};
+	B9ACBBBF1301D034006D08CC /* SiTEd */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = SiTEd;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	B9ACBBD01301D038006D08CC /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	B9ACBBD11301D038006D08CC /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	B9ACBBE41301D5E7006D08CC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2A37F4AEFDCFA73011CA2CEA /* MyDocument.h */;
+		name = "MyDocument.h: 18";
+		rLen = 0;
+		rLoc = 280;
+		rType = 0;
+		vrLen = 295;
+		vrLoc = 20;
+	};
+	B9ACBBF01301D8BA006D08CC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2A37F4ACFDCFA73011CA2CEA /* MyDocument.m */;
+		name = "MyDocument.m: 38";
+		rLen = 0;
+		rLoc = 923;
+		rType = 0;
+		vrLen = 324;
+		vrLoc = 44;
+	};
+	B9ACBBF11301D8BA006D08CC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D15AC360486D014006FF6A4 /* SiTEd-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/googleCode/mcmathdevyncairns/simpleTextEditor/simpleTextEditor-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	B9ACBBF21301D8BA006D08CC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D15AC360486D014006FF6A4 /* SiTEd-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleDocumentTypes,
+			0,
+			CFBundleTypeExtensions,
+			0,
+		);
+		name = "/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/googleCode/mcmathdevyncairns/simpleTextEditor/SiTEd-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+}

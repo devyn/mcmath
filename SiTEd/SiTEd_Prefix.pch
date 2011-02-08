@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'simpleTextEditor' target in the 'simpleTextEditor' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
