@@ -13,6 +13,7 @@
 
 -(IBAction)findSelectedButton:(id)sender
 {
+	NSLog(@"button selected: %d", [[sender selectedCell] tag]);
 }
 
 @end
