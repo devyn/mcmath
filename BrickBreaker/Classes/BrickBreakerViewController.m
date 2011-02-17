@@ -35,8 +35,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self initializeTimer];
-	ballMovement.x = 4;
-	ballMovement.y = 4;
+	
+	float m = 120/BB_FRAME_RATE; // 4 at 30fps.
+	ballMovement.x = m;
+	ballMovement.y = m;
 }
 
 
@@ -62,7 +64,7 @@
 
 - (void)initializeTimer
 {
-	float theInterval = 1.0/30.0;
+	float theInterval = 1.0/BB_FRAME_RATE;
 	[NSTimer scheduledTimerWithTimeInterval:theInterval target:self
 								   selector:@selector(animateBall:)
 								   userInfo:nil repeats:YES];

@@ -34,6 +34,7 @@
 		32CA4F630368D1EE00C91783 /* BrickBreaker_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBreaker_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* BrickBreaker-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BrickBreaker-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		B9796F2713047F4500F42C49 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		B98A11B2130DB16E0030056C /* BrickBreakerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrickBreakerConfig.h; sourceTree = "<group>"; };
 		B9D185B0130B121000DBCDF2 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +88,7 @@
 			children = (
 				32CA4F630368D1EE00C91783 /* BrickBreaker_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
+				B98A11B2130DB16E0030056C /* BrickBreakerConfig.h */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";

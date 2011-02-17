@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "BrickBreakerConfig.h"
 
 @interface BrickBreakerViewController : UIViewController {
 	UILabel *scoreLabel;
