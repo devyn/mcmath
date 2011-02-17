@@ -8,6 +8,13 @@
 
 #import "BrickBreakerViewController.h"
 
+@interface BrickBreakerViewController (Private)
+
+- (void)handlePaddleCollision;
+
+@end
+
+
 @implementation BrickBreakerViewController
 @synthesize scoreLabel;
 @synthesize ball;
@@ -37,8 +44,7 @@
 	[self initializeTimer];
 	
 	float m = 120/BB_FRAME_RATE; // 4 at 30fps.
-	ballMovement.x = m;
-	ballMovement.y = m;
+	ballMovement = CGPointMake(m,m);
 }
 
 
@@ -74,44 +80,7 @@
 {
 	ball.center = CGPointMake(ball.center.x+ballMovement.x, ball.center.y+ballMovement.y);
 	
-	BOOL paddleCollision =
-		 ball.center.y >= paddle.center.y - 16 &&
-		 ball.center.y <= paddle.center.y + 16 &&
-		 ball.center.x >  paddle.center.x - 32 &&
-		 ball.center.x <  paddle.center.x + 32;
-	
-	//NSLog(@"paddle collision? %d", (int)paddleCollision);
-	
-	if (paddleCollision)
-	{
-		ballMovement.y = -ballMovement.y; // reverses the direction
-		if (ball.center.y >= paddle.center.y - 16
-			&& ballMovement.y < 0)
-		{
-			ball.center = CGPointMake(ball.center.x, paddle.center.y - 16);
-		}
-		else if (ball.center.y <= paddle.center.y + 16
-				 && ballMovement.y > 0)
-		{
-			ball.center = CGPointMake(ball.center.x, paddle.center.y + 16);
-		}
-		else if (ball.center.x >= paddle.center.x - 32
-				 && ballMovement.x < 0)
-		{
-			ball.center = CGPointMake(ball.center.x - 32, paddle.center.y);
-		}
-		else if (ball.center.x <= paddle.center.x + 32
-				 && ballMovement.x > 0)
-		{
-			ball.center = CGPointMake(ball.center.x + 32, paddle.center.y);
-		}
-	}
-	
-	if (ball.center.x > 300 || ball.center.x < 20)
-		ballMovement.x = -ballMovement.x;
-	
-	if (ball.center.y > 440 || ball.center.y < 40)
-		ballMovement.y = -ballMovement.y;
+	[self handlePaddleCollision];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -147,3 +116,51 @@
 }
 
 @end
+
+@implementation BrickBreakerViewController (Private)
+
+
+
+- (void)handlePaddleCollision {
+	BOOL paddleCollision =
+	ball.center.y >= paddle.center.y - 16 &&
+	ball.center.y <= paddle.center.y + 16 &&
+	ball.center.x >  paddle.center.x - 32 &&
+	ball.center.x <  paddle.center.x + 32;
+	
+	//NSLog(@"paddle collision? %d", (int)paddleCollision);
+	
+	if (paddleCollision)
+	{
+		ballMovement.y = -ballMovement.y; // reverses the direction
+		if (ball.center.y >= paddle.center.y - 16
+			&& ballMovement.y < 0)
+		{
+			ball.center = CGPointMake(ball.center.x, paddle.center.y - 16);
+		}
+		else if (ball.center.y <= paddle.center.y + 16
+				 && ballMovement.y > 0)
+		{
+			ball.center = CGPointMake(ball.center.x, paddle.center.y + 16);
+		}
+		else if (ball.center.x >= paddle.center.x - 32
+				 && ballMovement.x < 0)
+		{
+			ball.center = CGPointMake(ball.center.x - 32, paddle.center.y);
+		}
+		else if (ball.center.x <= paddle.center.x + 32
+				 && ballMovement.x > 0)
+		{
+			ball.center = CGPointMake(ball.center.x + 32, paddle.center.y);
+		}
+	}
+	
+	if (ball.center.x > 300 || ball.center.x < 20)
+		ballMovement.x = -ballMovement.x;
+	
+	if (ball.center.y > 440 || ball.center.y < 40)
+		ballMovement.y = -ballMovement.y;
+}
+
+@end
+

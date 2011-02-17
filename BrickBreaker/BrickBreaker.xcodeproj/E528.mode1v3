@@ -269,7 +269,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -311,7 +311,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BrickBreakerConfig.h</string>
+								<string>BrickBreakerViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,16 +319,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BrickBreakerConfig.h</string>
+										<string>BrickBreakerViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B98A11CE130DB5C30030056C</string>
+										<string>B98A11EB130DBE3C0030056C</string>
 										<key>history</key>
 										<array>
-											<string>B98A11B6130DB3AE0030056C</string>
-											<string>B98A11C3130DB54F0030056C</string>
-											<string>B98A11C4130DB54F0030056C</string>
+											<string>B98A11D3130DBC550030056C</string>
+											<string>B98A11E9130DBE3C0030056C</string>
+											<string>B98A11EA130DBE3C0030056C</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -528,8 +528,8 @@
 	<array>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B9796F1E13047B4500F42C49</string>
 		<string>/Network/Servers/mcmathbe.sd38.ca/Users/E528/Documents/googleCode/mcmathdevyncairns/BrickBreaker/BrickBreaker.xcodeproj</string>
+		<string>B9796F1E13047B4500F42C49</string>
 	</array>
 	<key>WindowString</key>
 	<string>447 425 788 504 0 0 1680 1028 </string>
@@ -548,12 +548,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>BrickBreakerViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -622,7 +624,7 @@
 			<key>WindowToolGUID</key>
 			<string>B9796F1E13047B4500F42C49</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
