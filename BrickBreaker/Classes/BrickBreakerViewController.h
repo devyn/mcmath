@@ -11,21 +11,30 @@
 
 @interface BrickBreakerViewController : UIViewController {
 	UILabel *scoreLabel;
+	UILabel *livesLabel;
+	UILabel *messageLabel;
 	UIImageView *ball;
 	UIImageView *paddle;
 	
 	int score;
+	int lives;
 	
 	CGPoint ballMovement;
 	float touchOffset;
+	
+	BOOL isPlaying;
+	NSTimer *theTimer;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
+@property (nonatomic, retain) IBOutlet UILabel *livesLabel;
+@property (nonatomic, retain) IBOutlet UILabel *messageLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *ball;
 @property (nonatomic, retain) IBOutlet UIImageView *paddle;
 
 - (void)initializeTimer;
-- (void)animateBall:(NSTimer *)theTimer;
+- (void)startPlaying;
+- (void)pauseGame;
 
 @end
 

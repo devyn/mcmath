@@ -14,4 +14,8 @@
 // to be good. 60 if you're insane.
 #define BB_FRAME_RATE 60
 
+// Various strings.
+#define BB_LOSE_STRING @"You just lost The Game."
+#define BB_LIFEM_STRING @"AGH, IT BURNS!"
+
 #endif
