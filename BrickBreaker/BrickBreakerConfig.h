@@ -14,8 +14,13 @@
 // to be good. 60 if you're insane.
 #define BB_FRAME_RATE 60
 
+// Brick matrix size.
+#define BB_WIDTH 5
+#define BB_HEIGHT 4
+
 // Various strings.
 #define BB_LOSE_STRING @"You just lost The Game."
 #define BB_LIFEM_STRING @"AGH, IT BURNS!"
+#define BB_WIN_STRING @"Wait, what? You won!?"
 
 #endif

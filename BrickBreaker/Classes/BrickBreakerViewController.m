@@ -10,6 +10,8 @@
 
 @interface BrickBreakerViewController (Private)
 
+- (void)initializeTimer;
+- (void)initializeBricks;
 - (void)gameLogic;
 
 @end
@@ -43,6 +45,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self initializeBricks];
 	[self startPlaying];
 }
 
@@ -65,18 +68,6 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
-}
-
-- (void)initializeTimer
-{
-	if (theTimer == nil) {
-		float theInterval = 1.0/BB_FRAME_RATE;
-		theTimer = [NSTimer 
-					scheduledTimerWithTimeInterval:theInterval
-											target:self
-										  selector:@selector(gameLogic)
-										  userInfo:nil repeats:YES];
-	}
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -152,6 +143,35 @@
 
 @implementation BrickBreakerViewController (Private)
 
+- (void)initializeTimer
+{
+	if (theTimer == nil) {
+		float theInterval = 1.0/BB_FRAME_RATE;
+		theTimer = [NSTimer 
+					scheduledTimerWithTimeInterval:theInterval
+					target:self
+					selector:@selector(gameLogic)
+					userInfo:nil repeats:YES];
+	}
+}
+
+- (void)initializeBricks
+{
+	for (int i=0; i<4; i++)
+		brickTypes[i] = [NSString stringWithFormat:@"bricktype%d.png", i+1];
+	int count = 0;
+	for (int y=0; y < BB_HEIGHT; y++) {
+		for (int x=0; x < BB_WIDTH; x++) {
+			UIImage *image = [UIImage imageNamed:brickTypes[count++ % 4]];
+			bricks[x][y] = [[[UIImageView alloc] initWithImage:image] autorelease];
+			CGRect newFrame = bricks[x][y].frame;
+			newFrame.origin = CGPointMake(x*64, (y*40) + 50);
+			bricks[x][y].frame = newFrame;
+			[self.view addSubview:bricks[x][y]];
+		}
+	}
+}
+
 - (void)gameLogic
 {
 	ball.center = CGPointMake(ball.center.x+ballMovement.x, ball.center.y+ballMovement.y);
@@ -163,6 +183,34 @@
 	
 	if (paddleCollision)
 		ballMovement.y = -ballMovement.y;
+	
+	BOOL there_are_solid_bricks = NO;
+	for (int y=0; y < BB_HEIGHT; y++) {
+		for (int x=0; x < BB_WIDTH; x++) {
+			if (bricks[x][y].alpha == 1.0) {
+				there_are_solid_bricks = YES;
+				if (CGRectIntersectsRect(ball.frame, bricks[x][y].frame))
+				{
+					score += 10;
+					scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+					ballMovement.y = -ballMovement.y;
+					ballMovement.x = -ballMovement.x;
+					bricks[x][y].alpha -= 0.1;
+				} else {
+					if (bricks[x][y].alpha > 0)
+						bricks[x][y].alpha -= 0.1;
+				}
+			}
+		}
+	}
+	
+	if (!there_are_solid_bricks) {
+		[self pauseGame];
+		lives = 0;
+		messageLabel.text = BB_WIN_STRING;
+		messageLabel.hidden = NO;
+		return;
+	}
 	
 	if (ball.center.x > 310 || ball.center.x < 16)
 		ballMovement.x = -ballMovement.x;

@@ -15,6 +15,8 @@
 	UILabel *messageLabel;
 	UIImageView *ball;
 	UIImageView *paddle;
+	UIImageView *bricks[BB_WIDTH][BB_HEIGHT];
+	NSString *brickTypes[4];
 	
 	int score;
 	int lives;
@@ -32,7 +34,6 @@
 @property (nonatomic, retain) IBOutlet UIImageView *ball;
 @property (nonatomic, retain) IBOutlet UIImageView *paddle;
 
-- (void)initializeTimer;
 - (void)startPlaying;
 - (void)pauseGame;
 
