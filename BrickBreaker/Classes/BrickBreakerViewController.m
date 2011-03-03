@@ -12,6 +12,7 @@
 
 - (void)initializeTimer;
 - (void)initializeBricks;
+- (void)resetBricks;
 - (void)gameLogic;
 
 @end
@@ -45,7 +46,11 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.view.backgroundColor =
+		[UIColor colorWithPatternImage:
+		 [UIImage imageNamed:@"background.png"]];
 	[self initializeBricks];
+	wbreset = YES;
 	[self startPlaying];
 }
 
@@ -103,20 +108,26 @@
 
 - (void)startPlaying
 {
-	if (!lives) {
-		lives = 3;
-		score = 0;
-	} else {
+	if (!isPlaying) {
+		if (!lives) {
+			lives = 3;
+			score = 0;
+			[self resetBricks];
+		}
 		scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
 		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		
-		ball.center = CGPointMake(159, 239);
+		if (wbreset) {
+			ball.center = CGPointMake(159, 239);
+			wbreset = NO;
+			
+			float m = 120/BB_FRAME_RATE; // 4 at 30fps.
+			ballMovement = CGPointMake(m,m);
+			
+			if(arc4random() % 100 < 50)
+				ballMovement.x = -ballMovement.x;
+		}
 		
-		float m = 120/BB_FRAME_RATE; // 4 at 30fps.
-		ballMovement = CGPointMake(m,m);
-		
-		if(arc4random() % 100 < 50)
-			ballMovement.x = -ballMovement.x;
 		messageLabel.hidden = YES;
 		isPlaying = YES;
 		[self initializeTimer];
@@ -125,10 +136,24 @@
 
 - (void) pauseGame
 {
+	isPlaying = NO;
 	[theTimer invalidate];
 	theTimer = nil;
 }
 
+- (IBAction)restartGame:(id)sender
+{
+	messageLabel.hidden = YES;
+	[self pauseGame];
+	lives = 0;
+	wbreset = YES;
+	[self startPlaying];
+}
+
+- (IBAction)doPauseGame:(id)sender
+{
+	[self pauseGame];
+}
 
 - (void)dealloc {
 	[scoreLabel release];
@@ -136,6 +161,11 @@
 	[messageLabel release];
 	[ball release];
 	[paddle release];
+	for (int y=0; y < BB_HEIGHT; y++) {
+		for (int x=0; x < BB_WIDTH; x++) {
+			[(bricks[x][y]) release];
+		}
+	}
     [super dealloc];
 }
 
@@ -172,6 +202,15 @@
 	}
 }
 
+- (void)resetBricks
+{
+	for (int y=0; y < BB_HEIGHT; y++) {
+		for (int x=0; x < BB_WIDTH; x++) {
+			bricks[x][y].alpha = 1.0;
+		}
+	}
+}
+
 - (void)gameLogic
 {
 	ball.center = CGPointMake(ball.center.x+ballMovement.x, ball.center.y+ballMovement.y);
@@ -194,17 +233,17 @@
 					score += 10;
 					scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
 					ballMovement.y = -ballMovement.y;
-					ballMovement.x = -ballMovement.x;
+					//ballMovement.x = -ballMovement.x;
 					bricks[x][y].alpha -= 0.1;
-				} else {
-					if (bricks[x][y].alpha > 0)
-						bricks[x][y].alpha -= 0.1;
 				}
+			} else if (bricks[x][y].alpha < 1.0) {
+				bricks[x][y].alpha -= 0.1;
 			}
 		}
 	}
 	
 	if (!there_are_solid_bricks) {
+		wbreset = YES;
 		[self pauseGame];
 		lives = 0;
 		messageLabel.text = BB_WIN_STRING;
@@ -219,8 +258,8 @@
 		ballMovement.y = -ballMovement.y;
 	
 	if (ball.center.y > 444) {
+		wbreset = YES;
 		[self pauseGame];
-		isPlaying = NO;
 		lives--;
 		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		

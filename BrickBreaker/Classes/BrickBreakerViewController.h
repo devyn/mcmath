@@ -25,6 +25,7 @@
 	float touchOffset;
 	
 	BOOL isPlaying;
+	BOOL wbreset;
 	NSTimer *theTimer;
 }
 
@@ -36,6 +37,9 @@
 
 - (void)startPlaying;
 - (void)pauseGame;
+
+- (IBAction)restartGame:(id)sender;
+- (IBAction)doPauseGame:(id)sender;
 
 @end
 
