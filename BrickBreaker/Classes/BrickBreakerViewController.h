@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #include "BrickBreakerConfig.h"
 
+#ifdef __cplusplus
+
+// C++ specific includes
+
+#import <Box2D/Box2D.h>
+
+#endif
+
 @interface BrickBreakerViewController : UIViewController {
 	UILabel *scoreLabel;
 	UILabel *livesLabel;
@@ -27,6 +35,10 @@
 	BOOL isPlaying;
 	BOOL wbreset;
 	NSTimer *theTimer;
+	
+	b2World *world;
+	b2Body *boxBody;
+	b2Body *paddleBody;
 }
 
 @property (nonatomic, retain) IBOutlet UILabel *scoreLabel;

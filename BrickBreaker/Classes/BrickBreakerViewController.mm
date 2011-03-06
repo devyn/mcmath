@@ -8,10 +8,30 @@
 
 #import "BrickBreakerViewController.h"
 
+// helpers
+
+b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, double height) {
+	b2EdgeShape *shape = new b2EdgeShape;
+	// bottom
+	shape->Set(b2Vec2(left,top), b2Vec2(left+width,top));
+	body->CreateFixture(shape, 0);
+	// top
+	shape->Set(b2Vec2(left,top+height), b2Vec2(left+width, top+height));
+	body->CreateFixture(shape, 0);
+	// left
+	shape->Set(b2Vec2(left,top+height), b2Vec2(left,top));
+	body->CreateFixture(shape, 0);
+	// right
+	shape->Set(b2Vec2(left+width,top+height), b2Vec2(left+width,top));
+	body->CreateFixture(shape, 0);
+	return shape;
+}
+
 @interface BrickBreakerViewController (Private)
 
 - (void)initializeTimer;
 - (void)initializeBricks;
+- (void)initializePhysics;
 - (void)resetBricks;
 - (void)gameLogic;
 
@@ -46,12 +66,16 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	/* set background image */
 	self.view.backgroundColor =
 		[UIColor colorWithPatternImage:
 		 [UIImage imageNamed:@"background.png"]];
+	
+	/* game initialization */
 	[self initializeBricks];
+	[self initializePhysics];
 	wbreset = YES;
-	[self startPlaying];
 }
 
 
@@ -78,8 +102,10 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if (isPlaying) {
+		/*
 		UITouch *touch = [[event allTouches] anyObject];
 		touchOffset = paddle.center.x - [touch locationInView:touch.view].x;
+		 */
 	} else {
 		[self startPlaying];
 	}
@@ -89,6 +115,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if (isPlaying) {
+		/*
 		UITouch *touch = [[event allTouches] anyObject];
 		
 		float distanceMoved =
@@ -103,6 +130,7 @@
 			paddle.center = CGPointMake(290, paddle.center.y);
 		if (newX < 30)
 			paddle.center = CGPointMake(30, paddle.center.y);
+		 */
 	}
 }
 
@@ -156,6 +184,7 @@
 }
 
 - (void)dealloc {
+	[theTimer invalidate]; [theTimer release];
 	[scoreLabel release];
 	[livesLabel release];
 	[messageLabel release];
@@ -202,6 +231,52 @@
 	}
 }
 
+- (void)initializePhysics
+{
+	CGSize screenSize = self.view.bounds.size;
+	
+	// Define gravity.
+	b2Vec2 gravity;
+	gravity.Set(BB_GRAVITY_X, BB_GRAVITY_Y);
+	
+	// Should bodies be allowed to sleep?
+	bool doSleep = true;
+	
+	// Create the b2World.
+	world = new b2World(gravity, doSleep);
+	
+	world->SetContinuousPhysics(true);
+	
+	// Box in the world so that nothing can escape.
+	b2BodyDef boxBodyDef;
+	boxBodyDef.position.Set(0, 0);
+	
+	boxBody = world->CreateBody(&boxBodyDef);
+	BoxShape(boxBody, 0, 0,
+				      screenSize.width/BB_PTM,
+					  screenSize.height/BB_PTM);
+	
+	// Create the paddle's physical object.
+	b2BodyDef paddleBodyDef;
+	paddleBodyDef.position.Set(paddle.center.x/BB_PTM,
+							   (screenSize.height - paddle.center.y)/BB_PTM);
+	
+	paddleBody = world->CreateBody(&paddleBodyDef);
+	b2PolygonShape paddleShape;
+	
+	paddleShape.SetAsBox(paddle.bounds.size.width/BB_PTM,
+						 paddle.bounds.size.height/BB_PTM);
+	
+	b2FixtureDef paddleBodyFixtureDef;
+	paddleBodyFixtureDef.shape = &paddleShape;
+	paddleBodyFixtureDef.density = 3.0f;
+	paddleBodyFixtureDef.friction = 0.3f;
+	paddleBodyFixtureDef.restitution = 0.5f; // 0 = lead, 1 = super rubber
+	paddleBody->CreateFixture(&paddleBodyFixtureDef);
+	
+	paddleBody->SetType(b2_dynamicBody);
+}
+
 - (void)resetBricks
 {
 	for (int y=0; y < BB_HEIGHT; y++) {
@@ -213,6 +288,11 @@
 
 - (void)gameLogic
 {
+	world->Step(1.0f/BB_FRAME_RATE, 8, 1);
+	paddle.center = CGPointMake(paddleBody->GetPosition().x * BB_PTM,
+								self.view.bounds.size.height - paddleBody->GetPosition().y * BB_PTM);
+	NSLog(@"Physics stepped & updated.");
+	
 	ball.center = CGPointMake(ball.center.x+ballMovement.x, ball.center.y+ballMovement.y);
 	BOOL paddleCollision =
 		 ball.center.y >= paddle.center.y - 16 &&

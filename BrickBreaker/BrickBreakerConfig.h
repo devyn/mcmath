@@ -18,6 +18,11 @@
 #define BB_WIDTH 5
 #define BB_HEIGHT 4
 
+// Physical world properties.
+#define BB_GRAVITY_X 0
+#define BB_GRAVITY_Y -9.81 // Earth's gravity.
+#define BB_PTM 16 // How many pixels in a metre?
+
 // Various strings.
 #define BB_LOSE_STRING @"You just lost The Game."
 #define BB_LIFEM_STRING @"AGH, IT BURNS!"
