@@ -30,6 +30,7 @@ BBObject *ud_brick(int x, int y);
 @interface BrickBreakerViewController : UIViewController {
 	UILabel *scoreLabel;
 	UILabel *livesLabel;
+	UILabel *brickValueLabel;
 	UILabel *messageLabel;
 	UIImageView *ball;
 	UIImageView *paddle;
@@ -37,8 +38,13 @@ BBObject *ud_brick(int x, int y);
 	NSString *brickTypes[4];
 	
 	int score;
+	int brickValue; // how much is a brick worth? BB_INITIAL_BRICK_VALUE pts at start of game.
 	int lives;
 	int bricksRemaining;
+	
+	int counter;
+	
+	int brickChain;
 	
 	BOOL isPlaying;
 	BOOL wbreset;
@@ -51,6 +57,7 @@ BBObject *ud_brick(int x, int y);
 	b2Body *boxBody;
 	b2Body *paddleBody;
 	b2Body *ballBody;
+	b2Fixture *ballFixture; // so we may change the bounciness ;)
 	b2Body *brickBodies[BB_WIDTH][BB_HEIGHT];
 	b2Fixture *brickFixtures[BB_WIDTH][BB_HEIGHT];
 	b2MouseJoint *mouseJoint;
@@ -63,6 +70,7 @@ BBObject *ud_brick(int x, int y);
 
 @property (nonatomic, retain) IBOutlet UILabel *scoreLabel;
 @property (nonatomic, retain) IBOutlet UILabel *livesLabel;
+@property (nonatomic, retain) IBOutlet UILabel *brickValueLabel;
 @property (nonatomic, retain) IBOutlet UILabel *messageLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *ball;
 @property (nonatomic, retain) IBOutlet UIImageView *paddle;

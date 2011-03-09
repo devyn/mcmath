@@ -15,8 +15,16 @@
 #define BB_FRAME_RATE 60
 
 // Brick matrix size.
-#define BB_WIDTH 5
-#define BB_HEIGHT 4
+#define BB_WIDTH 10
+#define BB_HEIGHT 6
+
+// Initial properties.
+#define BB_INITIAL_BRICK_VALUE 10
+#define BB_INITIAL_BOUNCINESS 0.2f
+
+// Brick value bonuses.
+#define BB_BONUS_CHAIN1 5
+#define BB_BONUS_CHAIN2 20
 
 // Physical world properties.
 #define BB_GRAVITY_X 0
@@ -27,6 +35,8 @@
 #define BB_LOSE_STRING @"You just lost The Game."
 #define BB_LIFEM_STRING @"AGH, IT BURNS!"
 #define BB_WIN_STRING @"Wait, what? You won!?"
+// I very much doubt this will happen to anyone, but in case it does, best be prepared.
+#define BB_1337_STRING @"g0 d13, n00b. j00r |/|0t w3|_C0|\\/|e |-|3r3 4nY|\\/|0aR!"
 
 // Object types.
 #define BB_MAGIC      0x1337F00D

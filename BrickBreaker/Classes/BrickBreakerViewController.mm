@@ -94,6 +94,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 @implementation BrickBreakerViewController
 @synthesize scoreLabel;
 @synthesize livesLabel;
+@synthesize brickValueLabel;
 @synthesize messageLabel;
 @synthesize ball;
 @synthesize paddle;
@@ -190,15 +191,20 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 			lives = 3;
 			score = 0;
 			[self resetBricks];
+			wbreset = YES;
 		}
-		scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
-		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		
 		if (wbreset) {
 			wbreset = NO;
 			
+			brickChain = 0;
+			counter = 0;
+			
 			ballBody->SetTransform(_iBallPos, 0);
 			paddleBody->SetTransform(_iPaddlePos, 0);
+			
+			ballFixture->SetRestitution(BB_INITIAL_BOUNCINESS);
+			brickValue = BB_INITIAL_BRICK_VALUE;
 			
 			if (arc4random() % 2) ballBody->SetLinearVelocity(b2Vec2(-10.0f,-5.0f));
 			else                  ballBody->SetLinearVelocity(b2Vec2( 10.0f,-5.0f));
@@ -213,6 +219,10 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 				mouseJoint = NULL;
 			}
 		}
+		
+		scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+		brickValueLabel.text = [NSString stringWithFormat:@"%05d", brickValue];
+		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		
 		messageLabel.hidden = YES;
 		isPlaying = YES;
@@ -246,6 +256,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	[graphicalTimer invalidate]; [graphicalTimer release];
 	[scoreLabel release];
 	[livesLabel release];
+	[brickValueLabel release];
 	[messageLabel release];
 	[ball release];
 	[paddle release];
@@ -290,7 +301,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 			UIImage *image = [UIImage imageNamed:brickTypes[count++ % 4]];
 			bricks[x][y] = [[[UIImageView alloc] initWithImage:image] autorelease];
 			CGRect newFrame = bricks[x][y].frame;
-			newFrame.origin = CGPointMake(x*64, (y*40) + 50);
+			newFrame.origin = CGPointMake(x*32, (y*20) + 50);
 			bricks[x][y].frame = newFrame;
 			bricks[x][y].alpha = 0.0;
 			[self.view addSubview:bricks[x][y]];
@@ -366,9 +377,9 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	ballBodyFixtureDef.shape = &ballShape;
 	ballBodyFixtureDef.density = 5.0f;
 	ballBodyFixtureDef.friction = 1.0f;
-	ballBodyFixtureDef.restitution = 0.3f;
+	ballBodyFixtureDef.restitution = BB_INITIAL_BOUNCINESS;
 	ballBodyFixtureDef.filter.maskBits = 0xFFFD; // don't collide with paddle bounds
-	b2Fixture *ballFixture = ballBody->CreateFixture(&ballBodyFixtureDef);
+	ballFixture = ballBody->CreateFixture(&ballBodyFixtureDef);
 	ballFixture->SetUserData((void *)ud_obj(BB_OBJ_BALL));
 	
 	ballBody->SetType(b2_dynamicBody);
@@ -402,9 +413,8 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	bricksRemaining = BB_WIDTH * BB_HEIGHT;
 	for (int y=0; y < BB_HEIGHT; y++) {
 		for (int x=0; x < BB_WIDTH; x++) {
-			// Set opaque.
+			// Ensure we can see the bricks!
 			bricks[x][y].alpha = 1.0;
-			
 			// Only create bodies that don't already exist.
 			if (brickBodies[x][y] == NULL) {
 				// Initialize the body.
@@ -427,7 +437,10 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 
 - (void)gameLogic
 {
+	// Step the physics simulation forward.
 	world->Step(1.0f/BB_FRAME_RATE, 8, 1);
+	
+	// Update positions of things.
 	paddle.center = CGPointMake(paddleBody->GetPosition().x * BB_PTM,
 								self.view.bounds.size.height -
 								  paddleBody->GetPosition().y * BB_PTM);
@@ -435,6 +448,13 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	ball.center = CGPointMake(ballBody->GetPosition().x * BB_PTM,
 							  self.view.bounds.size.height -
 							    ballBody->GetPosition().y * BB_PTM);
+	
+	// Subtract 3 points for every 5 seconds passed.
+	if (++counter / BB_FRAME_RATE / 5 > 1) {
+		counter -= BB_FRAME_RATE*5;
+		score -= 3;
+		scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+	}
 	
 	// Iterate through the contacts.
 	std::vector<b2Body  *>toDestroy;
@@ -444,6 +464,8 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 		
 		BBContact contact = *pos;
 		
+		// Hooray for Box2D UserData hacking! :-/
+		
 		void *uda, *udb;
 		uda = contact.fixtureA->GetUserData();
 		udb = contact.fixtureB->GetUserData();
@@ -451,30 +473,44 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 		if (ud_detect(uda) && ud_detect(udb)) {
 			BBObject *bba = (BBObject *)uda;
 			BBObject *bbb = (BBObject *)udb;
-			if (bba->type == BB_OBJ_BRICK && bbb->type == BB_OBJ_BALL) {
-				int x = bba->value.brick.x;
-				int y = bba->value.brick.y;
+			BBObject *brickHit = NULL;
+			// Are we brick + ball?
+			if (bba->type == BB_OBJ_BRICK && bbb->type == BB_OBJ_BALL) brickHit = bba;
+			if (bbb->type == BB_OBJ_BRICK && bba->type == BB_OBJ_BALL) brickHit = bbb;
+			// Yeah, we are.
+			if (brickHit != NULL) {
+				int x = brickHit->value.brick.x;
+				int y = brickHit->value.brick.y;
+				
+				// Pretty fading.
 				bricks[x][y].alpha -= 0.05;
-				score += 10;
+				
+				// Score is usually good.
+				score += brickValue;
+				
+				// OH MY FSM, SCORE CHAINS!
+				brickValue += BB_BONUS_CHAIN1 + BB_BONUS_CHAIN2*brickChain;
+				++brickChain;
+				
+				// Count bricks that still need to be slaughtered.
 				bricksRemaining -= 1;
+				
+				// Let's make it a little harder, shall we?
+				if (ballFixture->GetRestitution() < 0.5f)
+					ballFixture->SetRestitution(ballFixture->GetRestitution()*1.2f);
+				
+				// Update score / brick value labels. Or we could just not tell the user. Meh.
 				scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+				brickValueLabel.text = [NSString stringWithFormat:@"%05d", brickValue];
+				
+				// Good. Now send our dead bricks to the meat shop.
 				if (std::find(toDestroy.begin(), toDestroy.end(), brickBodies[x][y]) == toDestroy.end()) {
 					toDestroy.push_back(brickBodies[x][y]);
 					brickBodies[x][y] = NULL;
 				}
 			}
-			if (bbb->type == BB_OBJ_BRICK && bba->type == BB_OBJ_BALL) {
-				int x = bbb->value.brick.x;
-				int y = bbb->value.brick.y;
-				bricks[x][y].alpha -= 0.05;
-				score += 10;
-				bricksRemaining -= 1;
-				scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
-				if (std::find(toDestroy.begin(), toDestroy.end(), brickBodies[x][y]) == toDestroy.end()) {
-					toDestroy.push_back(brickBodies[x][y]);
-					brickBodies[x][y] = NULL;
-				}
-			}
+			
+			// Are we ball + ground?
 			if ((bba->type == BB_OBJ_BALL && bbb->type == BB_OBJ_GROUND)
 			||  (bbb->type == BB_OBJ_BALL && bba->type == BB_OBJ_GROUND)) {
 				wbreset = YES;
@@ -482,6 +518,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 				lives--;
 				livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 				
+				// In other words, you suck.
 				if (!lives) {
 					messageLabel.text = BB_LOSE_STRING;
 				} else {
@@ -490,13 +527,26 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 				
 				messageLabel.hidden = NO;
 			}
+			
+			// We need to stop our CHAIN2 if the ball hits the paddle. Can't make it too easy.
+			if ((bba->type == BB_OBJ_PADDLE && bbb->type == BB_OBJ_BALL)
+			||  (bbb->type == BB_OBJ_PADDLE && bba->type == BB_OBJ_BALL)) {
+				brickChain = 0;
+			}
 		}
 		
 		if (bricksRemaining < 1) {
+			// Wait, how!?
 			wbreset = YES;
 			[self pauseGame];
 			lives = 0;
-			messageLabel.text = BB_WIN_STRING;
+			if (score == 1337) {
+				// Oh, you probably hacked it. Don't do that... mm'kay?
+				messageLabel.text = BB_1337_STRING;
+			} else {
+				// Or you really are awesome.
+				messageLabel.text = BB_WIN_STRING;
+			}
 			messageLabel.hidden = NO;
 		}
 	}
@@ -509,6 +559,8 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 
 - (void)updateGraphics
 {
+	// This does our fading for us. Separate timer so pausing the game doesn't make the fading effect pause.
+	// (I didn't like that. xD)
 	for (int y=0; y < BB_HEIGHT; y++) {
 		for (int x=0; x < BB_WIDTH; x++) {
 			if (bricks[x][y].alpha < 1.0 && bricks[x][y].alpha > 0.0) {
