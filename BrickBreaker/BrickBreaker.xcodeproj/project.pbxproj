@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B38F6CA13256E3500FD197F /* BBContactListener.cc in Sources */ = {isa = PBXBuildFile; fileRef = 0B38F6C913256E3500FD197F /* BBContactListener.cc */; };
 		0BF409AB132353B400E1DA37 /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4094A132353B300E1DA37 /* Box2DConfig.cmake */; };
 		0BF409AC132353B400E1DA37 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4094B132353B300E1DA37 /* CMakeLists.txt */; };
 		0BF409AD132353B400E1DA37 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4094D132353B300E1DA37 /* b2BroadPhase.cpp */; };
@@ -71,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B38F6C813256E3500FD197F /* BBContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBContactListener.h; sourceTree = "<group>"; };
+		0B38F6C913256E3500FD197F /* BBContactListener.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BBContactListener.cc; sourceTree = "<group>"; };
 		0BF40949132353B300E1DA37 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		0BF4094A132353B300E1DA37 /* Box2DConfig.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Box2DConfig.cmake; sourceTree = "<group>"; };
 		0BF4094B132353B300E1DA37 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -206,6 +209,8 @@
 				1D3623250D0F684500981E51 /* BrickBreakerAppDelegate.mm */,
 				28D7ACF60DDB3853001CB0EB /* BrickBreakerViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* BrickBreakerViewController.mm */,
+				0B38F6C813256E3500FD197F /* BBContactListener.h */,
+				0B38F6C913256E3500FD197F /* BBContactListener.cc */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				0BF409D6132353B400E1DA37 /* b2RopeJoint.cpp in Sources */,
 				0BF409D7132353B400E1DA37 /* b2WeldJoint.cpp in Sources */,
 				0BF409D8132353B400E1DA37 /* b2Rope.cpp in Sources */,
+				0B38F6CA13256E3500FD197F /* BBContactListener.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

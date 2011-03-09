@@ -5,16 +5,56 @@
 //  Created by E528 on 2/10/11.
 //  Copyright __MyCompanyName__ 2011. All rights reserved.
 //
+//  -- Ideas --
+//  - What about making it more difficult the more bricks you manage to hit in a row?
+//    - Score multipliers could go nicely with this, too.
+//    - It could be made more difficult by making the ball bouncier (faster). I *think* I can do this.
+//  - Fancy graphics. Not much to say about this. Just something that looks nicer.
+//    - Can't do any awesome special effects with UIKit, really.
+//  - More bricks?
+//  - Multi-hit bricks?
+//  - Randomly-generated level? (with gaps, perhaps, even!)
 
 #import "BrickBreakerViewController.h"
 
 // helpers
 
-void BoxShape(b2Body *body, double left, double top, double width, double height) {
+std::vector<BBObject *>ud_objs;
+
+BBObject *ud_obj(int type)
+{
+	BBObject *ret = (BBObject *)malloc(sizeof(BBObject));
+	ret->magic = BB_MAGIC;
+	ret->type = type;
+	ud_objs.push_back(ret);
+	return ret;
+}
+
+BOOL ud_detect(void *obj)
+{
+	if (obj == NULL) return FALSE;
+	
+	BBObject *bbo = (BBObject *)obj;
+	
+	if (bbo->magic == BB_MAGIC) return TRUE;
+	else return FALSE;
+}
+
+BBObject *ud_brick(int x, int y)
+{
+	BBObject *ret = ud_obj(BB_OBJ_BRICK);
+	ret->value.brick.x = x;
+	ret->value.brick.y = y;
+	return ret;
+}
+
+void BoxShape(b2Body *body, double left, double top, double width, double height)
+{
 	b2EdgeShape shape;
 	// bottom
 	shape.Set(b2Vec2(left,top), b2Vec2(left+width,top));
-	body->CreateFixture(&shape, 0);
+	b2Fixture *f = body->CreateFixture(&shape, 0);
+	f->SetUserData((void *)ud_obj(BB_OBJ_GROUND));
 	// top
 	shape.Set(b2Vec2(left,top+height), b2Vec2(left+width, top+height));
 	body->CreateFixture(&shape, 0);
@@ -24,6 +64,18 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	// right
 	shape.Set(b2Vec2(left+width,top+height), b2Vec2(left+width,top));
 	body->CreateFixture(&shape, 0);
+	// paddle top-bound
+	shape.Set(b2Vec2(left,top+height*0.3), b2Vec2(left+width, top+height*0.3));
+	f = body->CreateFixture(&shape, 0);
+	b2Filter fd = f->GetFilterData();
+	fd.categoryBits = 0x0002;
+	f->SetFilterData(fd);
+	// paddle bottom-bound
+	shape.Set(b2Vec2(left,top+height*0.1), b2Vec2(left+width, top+height*0.1));
+	f = body->CreateFixture(&shape, 0);
+	fd = f->GetFilterData();
+	fd.categoryBits = 0x0002;
+	f->SetFilterData(fd);
 }
 
 @interface BrickBreakerViewController (Private)
@@ -34,6 +86,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 - (void)doMoveMouse:(NSSet *)touches;
 - (void)resetBricks;
 - (void)gameLogic;
+- (void)updateGraphics;
 
 @end
 
@@ -76,6 +129,15 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	[self initializeBricks];
 	[self initializePhysics];
 	wbreset = YES;
+	
+	/* graphical timer */
+	
+	float gInterval = 1.0/BB_FRAME_RATE/2;
+	graphicalTimer = [NSTimer 
+					  scheduledTimerWithTimeInterval:gInterval
+					  target:self
+					  selector:@selector(updateGraphics)
+					  userInfo:nil repeats:YES];
 }
 
 
@@ -115,7 +177,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if (isPlaying/* && mouseJoint*/) {
+	if (isPlaying && mouseJoint) {
 		world->DestroyJoint(mouseJoint);
 		mouseJoint = NULL;
 	}
@@ -133,14 +195,23 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		
 		if (wbreset) {
-			ball.center = CGPointMake(159, 239);
 			wbreset = NO;
 			
-			float m = 120/BB_FRAME_RATE; // 4 at 30fps.
-			ballMovement = CGPointMake(m,m);
+			ballBody->SetTransform(_iBallPos, 0);
+			paddleBody->SetTransform(_iPaddlePos, 0);
 			
-			if(arc4random() % 100 < 50)
-				ballMovement.x = -ballMovement.x;
+			if (arc4random() % 2) ballBody->SetLinearVelocity(b2Vec2(-10.0f,-5.0f));
+			else                  ballBody->SetLinearVelocity(b2Vec2( 10.0f,-5.0f));
+			
+			paddleBody->SetLinearVelocity(b2Vec2(0,0));
+			
+			ballBody->SetAwake(true);
+			paddleBody->SetAwake(true);
+			
+			if (mouseJoint) {
+				world->DestroyJoint(mouseJoint);
+				mouseJoint = NULL;
+			}
 		}
 		
 		messageLabel.hidden = YES;
@@ -172,6 +243,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 
 - (void)dealloc {
 	[theTimer invalidate]; [theTimer release];
+	[graphicalTimer invalidate]; [graphicalTimer release];
 	[scoreLabel release];
 	[livesLabel release];
 	[messageLabel release];
@@ -182,6 +254,13 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 			[(bricks[x][y]) release];
 		}
 	}
+	std::vector<BBObject *>::iterator pos;
+	for (pos=ud_objs.begin(); pos != ud_objs.end(); ++pos) {
+		free(*pos);
+		ud_objs.erase(pos);
+	}
+	delete world;
+	delete contactListener;
     [super dealloc];
 }
 
@@ -213,6 +292,7 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 			CGRect newFrame = bricks[x][y].frame;
 			newFrame.origin = CGPointMake(x*64, (y*40) + 50);
 			bricks[x][y].frame = newFrame;
+			bricks[x][y].alpha = 0.0;
 			[self.view addSubview:bricks[x][y]];
 		}
 	}
@@ -234,6 +314,10 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	
 	world->SetContinuousPhysics(true);
 	
+	contactListener = new BBContactListener();
+	
+	world->SetContactListener(contactListener);
+	
 	// Box in the world so that nothing can escape.
 	b2BodyDef boxBodyDef;
 	boxBodyDef.position.Set(0, 0);
@@ -245,8 +329,9 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	
 	// Create the paddle's physical object.
 	b2BodyDef paddleBodyDef;
-	paddleBodyDef.position.Set(paddle.center.x/BB_PTM,
-							   (screenSize.height - paddle.center.y)/BB_PTM);
+	_iPaddlePos = b2Vec2(paddle.center.x/BB_PTM,
+						 (screenSize.height - paddle.center.y)/BB_PTM);
+	paddleBodyDef.position.Set(_iPaddlePos.x, _iPaddlePos.y);
 	paddleBodyDef.fixedRotation = true;
 	
 	paddleBody = world->CreateBody(&paddleBodyDef);
@@ -257,12 +342,36 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	
 	b2FixtureDef paddleBodyFixtureDef;
 	paddleBodyFixtureDef.shape = &paddleShape;
-	paddleBodyFixtureDef.density = 3.0f;
+	paddleBodyFixtureDef.density = 5.0f;
 	paddleBodyFixtureDef.friction = 0.3f;
-	paddleBodyFixtureDef.restitution = 0.5f; // 0 = lead, 1 = super rubber
-	paddleBody->CreateFixture(&paddleBodyFixtureDef);
+	paddleBodyFixtureDef.restitution = 0.2f; // 0 = lead, 1 = super rubber
+	b2Fixture *paddleFixture = paddleBody->CreateFixture(&paddleBodyFixtureDef);
+	paddleFixture->SetUserData((void *)ud_obj(BB_OBJ_PADDLE));
 	
 	paddleBody->SetType(b2_dynamicBody);
+	
+	// Create the ball's physical object.
+	b2BodyDef ballBodyDef;
+	_iBallPos = b2Vec2(ball.center.x/BB_PTM,
+					   (screenSize.height - ball.center.y)/BB_PTM);
+	ballBodyDef.position.Set(_iBallPos.x, _iBallPos.y);
+	ballBodyDef.fixedRotation = true;
+	
+	ballBody = world->CreateBody(&ballBodyDef);
+	b2CircleShape ballShape;
+	
+	ballShape.m_radius = ball.bounds.size.height/BB_PTM/2;
+	
+	b2FixtureDef ballBodyFixtureDef;
+	ballBodyFixtureDef.shape = &ballShape;
+	ballBodyFixtureDef.density = 5.0f;
+	ballBodyFixtureDef.friction = 1.0f;
+	ballBodyFixtureDef.restitution = 0.3f;
+	ballBodyFixtureDef.filter.maskBits = 0xFFFD; // don't collide with paddle bounds
+	b2Fixture *ballFixture = ballBody->CreateFixture(&ballBodyFixtureDef);
+	ballFixture->SetUserData((void *)ud_obj(BB_OBJ_BALL));
+	
+	ballBody->SetType(b2_dynamicBody);
 }
 
 - (void)doMoveMouse:(NSSet *)touches
@@ -290,9 +399,28 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 
 - (void)resetBricks
 {
+	bricksRemaining = BB_WIDTH * BB_HEIGHT;
 	for (int y=0; y < BB_HEIGHT; y++) {
 		for (int x=0; x < BB_WIDTH; x++) {
+			// Set opaque.
 			bricks[x][y].alpha = 1.0;
+			
+			// Only create bodies that don't already exist.
+			if (brickBodies[x][y] == NULL) {
+				// Initialize the body.
+				b2BodyDef brickBodyDef;
+				brickBodyDef.position.Set(bricks[x][y].center.x/BB_PTM,
+										  (self.view.bounds.size.height - bricks[x][y].center.y)/BB_PTM);
+				
+				b2Body *brickBody = brickBodies[x][y] = world->CreateBody(&brickBodyDef);
+				b2PolygonShape brickShape;
+				
+				brickShape.SetAsBox(bricks[x][y].bounds.size.width/BB_PTM/2,
+									bricks[x][y].bounds.size.height/BB_PTM/2);
+				
+				brickFixtures[x][y] = brickBody->CreateFixture(&brickShape, 10000.f);
+				brickFixtures[x][y]->SetUserData(ud_brick(x, y));
+			}
 		}
 	}
 }
@@ -303,65 +431,90 @@ void BoxShape(b2Body *body, double left, double top, double width, double height
 	paddle.center = CGPointMake(paddleBody->GetPosition().x * BB_PTM,
 								self.view.bounds.size.height -
 								  paddleBody->GetPosition().y * BB_PTM);
-	NSLog(@"Physics stepped & updated.");
 	
-	ball.center = CGPointMake(ball.center.x+ballMovement.x,
-							  ball.center.y+ballMovement.y);
-	BOOL paddleCollision =
-		 ball.center.y >= paddle.center.y - 16 &&
-		 ball.center.y <= paddle.center.y + 16 &&
-		 ball.center.x >  paddle.center.x - 32 &&
-		 ball.center.x <  paddle.center.x + 32;
+	ball.center = CGPointMake(ballBody->GetPosition().x * BB_PTM,
+							  self.view.bounds.size.height -
+							    ballBody->GetPosition().y * BB_PTM);
 	
-	if (paddleCollision)
-		ballMovement.y = -ballMovement.y;
-	
-	BOOL there_are_solid_bricks = NO;
-	for (int y=0; y < BB_HEIGHT; y++) {
-		for (int x=0; x < BB_WIDTH; x++) {
-			if (bricks[x][y].alpha == 1.0) {
-				there_are_solid_bricks = YES;
-				if (CGRectIntersectsRect(ball.frame, bricks[x][y].frame))
-				{
-					score += 10;
-					scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
-					ballMovement.y = -ballMovement.y;
-					bricks[x][y].alpha -= 0.1;
+	// Iterate through the contacts.
+	std::vector<b2Body  *>toDestroy;
+	std::vector<BBContact>::iterator pos;
+	for (pos = contactListener->contacts.begin();
+		 pos != contactListener->contacts.end(); ++pos) {
+		
+		BBContact contact = *pos;
+		
+		void *uda, *udb;
+		uda = contact.fixtureA->GetUserData();
+		udb = contact.fixtureB->GetUserData();
+		
+		if (ud_detect(uda) && ud_detect(udb)) {
+			BBObject *bba = (BBObject *)uda;
+			BBObject *bbb = (BBObject *)udb;
+			if (bba->type == BB_OBJ_BRICK && bbb->type == BB_OBJ_BALL) {
+				int x = bba->value.brick.x;
+				int y = bba->value.brick.y;
+				bricks[x][y].alpha -= 0.05;
+				score += 10;
+				bricksRemaining -= 1;
+				scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+				if (std::find(toDestroy.begin(), toDestroy.end(), brickBodies[x][y]) == toDestroy.end()) {
+					toDestroy.push_back(brickBodies[x][y]);
+					brickBodies[x][y] = NULL;
 				}
-			} else if (bricks[x][y].alpha < 1.0) {
-				bricks[x][y].alpha -= 0.1;
+			}
+			if (bbb->type == BB_OBJ_BRICK && bba->type == BB_OBJ_BALL) {
+				int x = bbb->value.brick.x;
+				int y = bbb->value.brick.y;
+				bricks[x][y].alpha -= 0.05;
+				score += 10;
+				bricksRemaining -= 1;
+				scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
+				if (std::find(toDestroy.begin(), toDestroy.end(), brickBodies[x][y]) == toDestroy.end()) {
+					toDestroy.push_back(brickBodies[x][y]);
+					brickBodies[x][y] = NULL;
+				}
+			}
+			if ((bba->type == BB_OBJ_BALL && bbb->type == BB_OBJ_GROUND)
+			||  (bbb->type == BB_OBJ_BALL && bba->type == BB_OBJ_GROUND)) {
+				wbreset = YES;
+				[self pauseGame];
+				lives--;
+				livesLabel.text = [NSString stringWithFormat:@"%d", lives];
+				
+				if (!lives) {
+					messageLabel.text = BB_LOSE_STRING;
+				} else {
+					messageLabel.text = BB_LIFEM_STRING;
+				}
+				
+				messageLabel.hidden = NO;
 			}
 		}
-	}
-	
-	if (!there_are_solid_bricks) {
-		wbreset = YES;
-		[self pauseGame];
-		lives = 0;
-		messageLabel.text = BB_WIN_STRING;
-		messageLabel.hidden = NO;
-		return;
-	}
-	
-	if (ball.center.x > 310 || ball.center.x < 16)
-		ballMovement.x = -ballMovement.x;
-	
-	if (ball.center.y < 32)
-		ballMovement.y = -ballMovement.y;
-	
-	if (ball.center.y > 444) {
-		wbreset = YES;
-		[self pauseGame];
-		lives--;
-		livesLabel.text = [NSString stringWithFormat:@"%d", lives];
 		
-		if (!lives) {
-			messageLabel.text = BB_LOSE_STRING;
-		} else {
-			messageLabel.text = BB_LIFEM_STRING;
+		if (bricksRemaining < 1) {
+			wbreset = YES;
+			[self pauseGame];
+			lives = 0;
+			messageLabel.text = BB_WIN_STRING;
+			messageLabel.hidden = NO;
 		}
-		
-		messageLabel.hidden = NO;
+	}
+	
+	std::vector<b2Body  *>::iterator pos2;
+	for (pos2 = toDestroy.begin(); pos2 != toDestroy.end(); ++pos2) {
+		world->DestroyBody(*pos2);
+	}
+}
+
+- (void)updateGraphics
+{
+	for (int y=0; y < BB_HEIGHT; y++) {
+		for (int x=0; x < BB_WIDTH; x++) {
+			if (bricks[x][y].alpha < 1.0 && bricks[x][y].alpha > 0.0) {
+				bricks[x][y].alpha -= 0.05;
+			}
+		}
 	}
 }
 
