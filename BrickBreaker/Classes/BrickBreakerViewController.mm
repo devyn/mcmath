@@ -10,21 +10,20 @@
 
 // helpers
 
-b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, double height) {
-	b2EdgeShape *shape = new b2EdgeShape;
+void BoxShape(b2Body *body, double left, double top, double width, double height) {
+	b2EdgeShape shape;
 	// bottom
-	shape->Set(b2Vec2(left,top), b2Vec2(left+width,top));
-	body->CreateFixture(shape, 0);
+	shape.Set(b2Vec2(left,top), b2Vec2(left+width,top));
+	body->CreateFixture(&shape, 0);
 	// top
-	shape->Set(b2Vec2(left,top+height), b2Vec2(left+width, top+height));
-	body->CreateFixture(shape, 0);
+	shape.Set(b2Vec2(left,top+height), b2Vec2(left+width, top+height));
+	body->CreateFixture(&shape, 0);
 	// left
-	shape->Set(b2Vec2(left,top+height), b2Vec2(left,top));
-	body->CreateFixture(shape, 0);
+	shape.Set(b2Vec2(left,top+height), b2Vec2(left,top));
+	body->CreateFixture(&shape, 0);
 	// right
-	shape->Set(b2Vec2(left+width,top+height), b2Vec2(left+width,top));
-	body->CreateFixture(shape, 0);
-	return shape;
+	shape.Set(b2Vec2(left+width,top+height), b2Vec2(left+width,top));
+	body->CreateFixture(&shape, 0);
 }
 
 @interface BrickBreakerViewController (Private)
@@ -32,6 +31,7 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 - (void)initializeTimer;
 - (void)initializeBricks;
 - (void)initializePhysics;
+- (void)doMoveMouse:(NSSet *)touches;
 - (void)resetBricks;
 - (void)gameLogic;
 
@@ -101,36 +101,23 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if (isPlaying) {
-		/*
-		UITouch *touch = [[event allTouches] anyObject];
-		touchOffset = paddle.center.x - [touch locationInView:touch.view].x;
-		 */
-	} else {
+	if (isPlaying) [self doMoveMouse:touches];
+	else {
 		[self startPlaying];
+		[self doMoveMouse:touches];
 	}
-
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if (isPlaying) {
-		/*
-		UITouch *touch = [[event allTouches] anyObject];
-		
-		float distanceMoved =
-			([touch locationInView:touch.view].x
-			   + touchOffset) - paddle.center.x;
-		
-		float newX = paddle.center.x + distanceMoved;
-		
-		if (newX > 30 && newX < 290)
-			paddle.center = CGPointMake(newX, paddle.center.y);
-		if (newX > 290)
-			paddle.center = CGPointMake(290, paddle.center.y);
-		if (newX < 30)
-			paddle.center = CGPointMake(30, paddle.center.y);
-		 */
+	if (isPlaying) [self doMoveMouse:touches];
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	if (isPlaying/* && mouseJoint*/) {
+		world->DestroyJoint(mouseJoint);
+		mouseJoint = NULL;
 	}
 }
 
@@ -260,12 +247,13 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 	b2BodyDef paddleBodyDef;
 	paddleBodyDef.position.Set(paddle.center.x/BB_PTM,
 							   (screenSize.height - paddle.center.y)/BB_PTM);
+	paddleBodyDef.fixedRotation = true;
 	
 	paddleBody = world->CreateBody(&paddleBodyDef);
 	b2PolygonShape paddleShape;
 	
-	paddleShape.SetAsBox(paddle.bounds.size.width/BB_PTM,
-						 paddle.bounds.size.height/BB_PTM);
+	paddleShape.SetAsBox(paddle.bounds.size.width/BB_PTM/2,
+						 paddle.bounds.size.height/BB_PTM/2);
 	
 	b2FixtureDef paddleBodyFixtureDef;
 	paddleBodyFixtureDef.shape = &paddleShape;
@@ -275,6 +263,29 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 	paddleBody->CreateFixture(&paddleBodyFixtureDef);
 	
 	paddleBody->SetType(b2_dynamicBody);
+}
+
+- (void)doMoveMouse:(NSSet *)touches
+{
+	UITouch *touch = [touches anyObject];
+	CGPoint l = [touch locationInView:touch.view];
+	b2Vec2 tp = b2Vec2(l.x/BB_PTM,
+					   (touch.view.bounds.size.height - l.y)/BB_PTM);
+	
+	if (mouseJoint == NULL) {
+		b2MouseJointDef mouseJointDef;
+		mouseJointDef.bodyA = boxBody;
+		mouseJointDef.bodyB = paddleBody;
+		mouseJointDef.target = tp;
+		mouseJointDef.collideConnected = true;
+		mouseJointDef.maxForce = 1000.0f * paddleBody->GetMass();
+		
+		mouseJoint = (b2MouseJoint *)world->CreateJoint(&mouseJointDef);
+		paddleBody->SetAwake(true);
+	} else {
+		mouseJoint->SetTarget(tp);
+	}
+
 }
 
 - (void)resetBricks
@@ -290,10 +301,12 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 {
 	world->Step(1.0f/BB_FRAME_RATE, 8, 1);
 	paddle.center = CGPointMake(paddleBody->GetPosition().x * BB_PTM,
-								self.view.bounds.size.height - paddleBody->GetPosition().y * BB_PTM);
+								self.view.bounds.size.height -
+								  paddleBody->GetPosition().y * BB_PTM);
 	NSLog(@"Physics stepped & updated.");
 	
-	ball.center = CGPointMake(ball.center.x+ballMovement.x, ball.center.y+ballMovement.y);
+	ball.center = CGPointMake(ball.center.x+ballMovement.x,
+							  ball.center.y+ballMovement.y);
 	BOOL paddleCollision =
 		 ball.center.y >= paddle.center.y - 16 &&
 		 ball.center.y <= paddle.center.y + 16 &&
@@ -313,7 +326,6 @@ b2EdgeShape *BoxShape(b2Body *body, double left, double top, double width, doubl
 					score += 10;
 					scoreLabel.text = [NSString stringWithFormat:@"%05d", score];
 					ballMovement.y = -ballMovement.y;
-					//ballMovement.x = -ballMovement.x;
 					bricks[x][y].alpha -= 0.1;
 				}
 			} else if (bricks[x][y].alpha < 1.0) {

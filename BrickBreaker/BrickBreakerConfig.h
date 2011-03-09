@@ -12,7 +12,7 @@
 
 // Set the frame rate here. 30 = default. 45 seems
 // to be good. 60 if you're insane.
-#define BB_FRAME_RATE 60
+#define BB_FRAME_RATE 45
 
 // Brick matrix size.
 #define BB_WIDTH 5
