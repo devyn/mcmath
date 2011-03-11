@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0B38F6CA13256E3500FD197F /* BBContactListener.cc in Sources */ = {isa = PBXBuildFile; fileRef = 0B38F6C913256E3500FD197F /* BBContactListener.cc */; };
+		0B38F8C913286D3D00FD197F /* icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C213286D3D00FD197F /* icon-512.png */; };
+		0B38F8CA13286D3D00FD197F /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C313286D3D00FD197F /* icon-72.png */; };
+		0B38F8CB13286D3D00FD197F /* icon-small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C413286D3D00FD197F /* icon-small-50.png */; };
+		0B38F8CC13286D3D00FD197F /* icon-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C513286D3D00FD197F /* icon-small.png */; };
+		0B38F8CD13286D3D00FD197F /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C613286D3D00FD197F /* icon-small@2x.png */; };
+		0B38F8CE13286D3D00FD197F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C713286D3D00FD197F /* icon.png */; };
+		0B38F8CF13286D3D00FD197F /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B38F8C813286D3D00FD197F /* icon@2x.png */; };
 		0BF409AB132353B400E1DA37 /* Box2DConfig.cmake in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4094A132353B300E1DA37 /* Box2DConfig.cmake */; };
 		0BF409AC132353B400E1DA37 /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0BF4094B132353B300E1DA37 /* CMakeLists.txt */; };
 		0BF409AD132353B400E1DA37 /* b2BroadPhase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0BF4094D132353B300E1DA37 /* b2BroadPhase.cpp */; };
@@ -74,6 +81,13 @@
 /* Begin PBXFileReference section */
 		0B38F6C813256E3500FD197F /* BBContactListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBContactListener.h; sourceTree = "<group>"; };
 		0B38F6C913256E3500FD197F /* BBContactListener.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BBContactListener.cc; sourceTree = "<group>"; };
+		0B38F8C213286D3D00FD197F /* icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-512.png"; sourceTree = "<group>"; };
+		0B38F8C313286D3D00FD197F /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		0B38F8C413286D3D00FD197F /* icon-small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small-50.png"; sourceTree = "<group>"; };
+		0B38F8C513286D3D00FD197F /* icon-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small.png"; sourceTree = "<group>"; };
+		0B38F8C613286D3D00FD197F /* icon-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-small@2x.png"; sourceTree = "<group>"; };
+		0B38F8C713286D3D00FD197F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		0B38F8C813286D3D00FD197F /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		0BF40949132353B300E1DA37 /* Box2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Box2D.h; sourceTree = "<group>"; };
 		0BF4094A132353B300E1DA37 /* Box2DConfig.cmake */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Box2DConfig.cmake; sourceTree = "<group>"; };
 		0BF4094B132353B300E1DA37 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -403,6 +417,13 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0B38F8C213286D3D00FD197F /* icon-512.png */,
+				0B38F8C313286D3D00FD197F /* icon-72.png */,
+				0B38F8C413286D3D00FD197F /* icon-small-50.png */,
+				0B38F8C513286D3D00FD197F /* icon-small.png */,
+				0B38F8C613286D3D00FD197F /* icon-small@2x.png */,
+				0B38F8C713286D3D00FD197F /* icon.png */,
+				0B38F8C813286D3D00FD197F /* icon@2x.png */,
 				B9F218A6132036F6002EA448 /* background.png */,
 				B9FEC44013203B3A008C9D4E /* bricktype1.png */,
 				B9FEC44113203B3A008C9D4E /* bricktype2.png */,
@@ -488,6 +509,13 @@
 				B9FEC44713203B3A008C9D4E /* bricktype4.png in Resources */,
 				0BF409AB132353B400E1DA37 /* Box2DConfig.cmake in Resources */,
 				0BF409AC132353B400E1DA37 /* CMakeLists.txt in Resources */,
+				0B38F8C913286D3D00FD197F /* icon-512.png in Resources */,
+				0B38F8CA13286D3D00FD197F /* icon-72.png in Resources */,
+				0B38F8CB13286D3D00FD197F /* icon-small-50.png in Resources */,
+				0B38F8CC13286D3D00FD197F /* icon-small.png in Resources */,
+				0B38F8CD13286D3D00FD197F /* icon-small@2x.png in Resources */,
+				0B38F8CE13286D3D00FD197F /* icon.png in Resources */,
+				0B38F8CF13286D3D00FD197F /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
